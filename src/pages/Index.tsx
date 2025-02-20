@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { ChatMessage } from "../components/ChatMessage";
 import { ChatInput } from "../components/ChatInput";
+import { ThemeToggle } from "../components/ThemeToggle";
 import { useToast } from "@/hooks/use-toast";
 
 interface Message {
@@ -49,7 +50,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background transition-colors">
+      <ThemeToggle />
       <div className="chat-container">
         {messages.map((message, index) => (
           <ChatMessage

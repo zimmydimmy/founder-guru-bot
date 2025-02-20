@@ -56,6 +56,9 @@ export default {
         "message-fade-in": "message-fade-in 0.3s ease-out forwards",
         "loader-pulse": "loader-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
