@@ -6,52 +6,35 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 0 0% 12%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
-    --primary: 0 0% 12%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 12%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 0 0% 92%;
-    --accent-foreground: 0 0% 12%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 92%;
-    --input: 0 0% 92%;
-    --ring: 0 0% 12%;
-    --radius: 0.75rem;
-    --chat-user: 0 0% 12%;
-    --chat-assistant: 0 0% 98%;
-  }
+    --primary-custom: 251 55% 71%;
+    --secondary-custom: 231 35% 54%;
+    --tertiary-custom: 222 30% 50%;
+    --text-custom: 210 40% 98%;
 
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222 47% 11%;
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --background: var(--primary-custom);
+    --foreground: var(--text-custom);
+    --card: var(--primary-custom);
+    --card-foreground: var(--text-custom);
+    --popover: var(--primary-custom);
+    --popover-foreground: var(--text-custom);
+    --primary: var(--primary-custom);
+    --primary-foreground: var(--text-custom);
+    --secondary: var(--secondary-custom);
+    --secondary-foreground: var(--text-custom);
+    --tertiary: var(--tertiary-custom);
+    --tertiary-foreground: var(--text-custom);
     --muted: 217 32% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 217 32% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: var(--secondary-custom);
+    --accent-foreground: var(--text-custom);
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     --border: 217 32% 17%;
     --input: 217 32% 17%;
     --ring: 224 76% 48%;
-    --chat-user: 210 40% 98%;
-    --chat-assistant: 217 32% 17%;
+    --radius: 0.75rem;
+    --chat-user: var(--text-custom);
+    --chat-assistant: var(--secondary-custom);
   }
 
   * {

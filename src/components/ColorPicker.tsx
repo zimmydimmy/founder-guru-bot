@@ -26,6 +26,14 @@ export function ColorPicker({ label, color, onChange }: ColorPickerProps) {
     onChange(newColor);
   };
 
+  const presetColors = [
+    '#9b87f5', // Primary Purple
+    '#7E69AB', // Secondary Purple
+    '#6E59A5', // Tertiary Purple
+    '#F8FAFC', // Text Color
+    '#1a1f2c', // Dark Background
+  ];
+
   return (
     <Popover>
       <PopoverTrigger asChild>
@@ -49,7 +57,7 @@ export function ColorPicker({ label, color, onChange }: ColorPickerProps) {
             className="w-full h-8"
           />
           <div className="grid grid-cols-5 gap-2">
-            {['#1a1f2c', '#2d3748', '#4a5568', '#718096', '#a0aec0'].map((presetColor) => (
+            {presetColors.map((presetColor) => (
               <button
                 key={presetColor}
                 className="w-8 h-8 rounded-full border focus:outline-none focus:ring-2 focus:ring-ring"
