@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -13,9 +14,9 @@
 
     --background: var(--primary-custom);
     --foreground: var(--text-custom);
-    --card: var(--primary-custom);
+    --card: var(--secondary-custom);
     --card-foreground: var(--text-custom);
-    --popover: var(--primary-custom);
+    --popover: var(--tertiary-custom);
     --popover-foreground: var(--text-custom);
     --primary: var(--primary-custom);
     --primary-foreground: var(--text-custom);
@@ -29,9 +30,9 @@
     --accent-foreground: var(--text-custom);
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217 32% 17%;
-    --input: 217 32% 17%;
-    --ring: 224 76% 48%;
+    --border: var(--tertiary-custom);
+    --input: var(--secondary-custom);
+    --ring: var(--primary-custom);
     --radius: 0.75rem;
     --chat-user: var(--text-custom);
     --chat-assistant: var(--secondary-custom);
