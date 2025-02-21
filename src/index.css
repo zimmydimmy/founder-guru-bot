@@ -63,7 +63,12 @@
   }
 
   .assistant-avatar {
-    @apply flex-shrink-0 w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center;
+    @apply flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center;
+    background-color: var(--avatarBg, hsl(var(--secondary)));
+  }
+
+  .assistant-avatar svg {
+    color: var(--avatarIcon, hsl(var(--primary)));
   }
 
   .message-content {
@@ -71,7 +76,11 @@
   }
 
   .user-message {
-    @apply flex justify-end;
+    @apply flex justify-end w-full;
+  }
+
+  .assistant-message {
+    @apply flex justify-start w-full;
   }
 
   .user-message .message-content {

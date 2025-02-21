@@ -1,6 +1,6 @@
-
 import { useTheme } from "next-themes";
 import { useState } from "react";
+import { ColorPicker } from "./ColorPicker";
 
 export function ThemeCustomizer() {
   const { theme, setTheme } = useTheme();
@@ -10,12 +10,22 @@ export function ThemeCustomizer() {
     tertiary: '#6E59A5',
     quaternary: '#8E79BB',
     text: '#f8fafc',
+    avatarBg: '#7E69AB',
+    avatarIcon: '#9b87f5',
+    inputBg: '#7E69AB',
+    buttonBg: '#7E69AB',
+    buttonText: '#f8fafc',
   });
 
   const updateColor = (type: keyof typeof colors) => (color: string) => {
     setColors((prev) => ({ ...prev, [type]: color }));
     const hsl = hexToHSL(color);
-    document.documentElement.style.setProperty(`--${type}-custom`, `${hsl.h} ${hsl.s}% ${hsl.l}%`);
+
+    if (type === 'avatarBg' || type === 'avatarIcon' || type === 'inputBg' || type === 'buttonBg' || type === 'buttonText') {
+      document.documentElement.style.setProperty(`--${type}`, color);
+    } else {
+      document.documentElement.style.setProperty(`--${type}-custom`, `${hsl.h} ${hsl.s}% ${hsl.l}%`);
+    }
   };
 
   const hexToHSL = (hex: string) => {
@@ -55,22 +65,16 @@ export function ThemeCustomizer() {
   };
 
   return (
-    <div className="fixed top-16 right-4 flex flex-col gap-2">
-      {(Object.entries(colors) as [keyof typeof colors, string][]).map(([key, color]) => (
-        <div
-          key={key}
-          className="h-10 w-10 rounded-md border-2 border-input relative overflow-hidden hover:opacity-80 transition-opacity"
-          style={{ backgroundColor: color }}
-        >
-          <input
-            type="color"
-            value={color}
-            onChange={(e) => updateColor(key)(e.target.value)}
-            className="absolute inset-0 cursor-pointer opacity-0 w-full h-full"
-            aria-label={`Pick ${key} color`}
-          />
-        </div>
-      ))}
+    <div className="fixed top-16 right-4 flex flex-col gap-2 bg-secondary/90 p-4 rounded-lg backdrop-blur-sm w-72">
+      <ColorPicker label="Primary" color={colors.primary} onChange={updateColor('primary')} />
+      <ColorPicker label="Secondary" color={colors.secondary} onChange={updateColor('secondary')} />
+      <ColorPicker label="Tertiary" color={colors.tertiary} onChange={updateColor('tertiary')} />
+      <ColorPicker label="Text" color={colors.text} onChange={updateColor('text')} />
+      <ColorPicker label="Avatar Background" color={colors.avatarBg} onChange={updateColor('avatarBg')} />
+      <ColorPicker label="Avatar Icon" color={colors.avatarIcon} onChange={updateColor('avatarIcon')} />
+      <ColorPicker label="Input Background" color={colors.inputBg} onChange={updateColor('inputBg')} />
+      <ColorPicker label="Button Background" color={colors.buttonBg} onChange={updateColor('buttonBg')} />
+      <ColorPicker label="Button Text" color={colors.buttonText} onChange={updateColor('buttonText')} />
     </div>
   );
 }
