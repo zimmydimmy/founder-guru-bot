@@ -76,15 +76,15 @@
   }
 
   .user-message {
-    @apply flex justify-end w-full;
+    @apply flex flex-row-reverse w-full;
   }
 
   .assistant-message {
-    @apply flex justify-start w-full;
+    @apply flex w-full;
   }
 
   .user-message .message-content {
-    @apply bg-chat-user text-white;
+    @apply bg-chat-user text-white ml-0;
   }
 
   .assistant-message .message-content {
