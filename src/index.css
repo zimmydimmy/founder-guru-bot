@@ -76,7 +76,11 @@
   }
 
   .user-message {
-    @apply flex flex-row-reverse w-full;
+    @apply flex flex-row-reverse w-full justify-end;
+  }
+
+  .user-message .message-content-wrapper {
+    @apply justify-end;
   }
 
   .assistant-message {
