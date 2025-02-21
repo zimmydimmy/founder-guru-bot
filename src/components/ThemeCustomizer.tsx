@@ -6,7 +6,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Palette } from "lucide-react";
 import { useState } from "react";
 
 export function ThemeCustomizer() {
@@ -74,31 +73,13 @@ export function ThemeCustomizer() {
               <span className="sr-only">Pick {key} color</span>
             </Button>
           </PopoverTrigger>
-          <PopoverContent className="w-64" align="end">
-            <div className="flex flex-col gap-2">
-              <input
-                type="color"
-                value={color}
-                onChange={(e) => updateColor(key)(e.target.value)}
-                className="w-full h-8"
-              />
-              <div className="grid grid-cols-5 gap-2">
-                {[
-                  '#9b87f5',
-                  '#7E69AB',
-                  '#6E59A5',
-                  '#F8FAFC',
-                  '#1a1f2c',
-                ].map((presetColor) => (
-                  <button
-                    key={presetColor}
-                    className="w-8 h-8 rounded-full border focus:outline-none focus:ring-2 focus:ring-ring"
-                    style={{ backgroundColor: presetColor }}
-                    onClick={() => updateColor(key)(presetColor)}
-                  />
-                ))}
-              </div>
-            </div>
+          <PopoverContent className="w-16 p-2" align="end">
+            <input
+              type="color"
+              value={color}
+              onChange={(e) => updateColor(key)(e.target.value)}
+              className="w-full h-8"
+            />
           </PopoverContent>
         </Popover>
       ))}
