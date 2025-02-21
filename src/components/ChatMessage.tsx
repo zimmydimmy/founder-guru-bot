@@ -1,5 +1,5 @@
 
-import { motion } from "framer-motion";
+import { Bot } from "lucide-react";
 
 interface ChatMessageProps {
   role: "user" | "assistant";
@@ -8,15 +8,15 @@ interface ChatMessageProps {
 
 export const ChatMessage = ({ role, content }: ChatMessageProps) => {
   return (
-    <motion.div
-      className={`message ${role}-message`}
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-    >
-      <div className="message-content">
-        <p className="text-[15px] leading-relaxed">{content}</p>
+    <div className={`message ${role}-message`}>
+      <div className="message-content-wrapper">
+        {role === "assistant" && (
+          <div className="assistant-avatar">
+            <Bot className="w-6 h-6 text-primary" />
+          </div>
+        )}
+        <div className="message-content">{content}</div>
       </div>
-    </motion.div>
+    </div>
   );
 };

@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Bot } from "lucide-react";
 import { ChatMessage } from "../components/ChatMessage";
 import { ChatInput } from "../components/ChatInput";
 import { ThemeToggle } from "../components/ThemeToggle";
@@ -64,11 +65,16 @@ const Index = () => {
         ))}
         {isLoading && (
           <div className="message assistant-message">
-            <div className="message-content">
-              <div className="flex gap-2">
-                <div className="w-2 h-2 rounded-full bg-primary/40 animate-loader-pulse" />
-                <div className="w-2 h-2 rounded-full bg-primary/40 animate-loader-pulse delay-150" />
-                <div className="w-2 h-2 rounded-full bg-primary/40 animate-loader-pulse delay-300" />
+            <div className="message-content-wrapper">
+              <div className="assistant-avatar">
+                <Bot className="w-6 h-6 text-primary" />
+              </div>
+              <div className="loading-bubble">
+                <div className="loading-dots">
+                  <div className="loading-dot" />
+                  <div className="loading-dot" />
+                  <div className="loading-dot" />
+                </div>
               </div>
             </div>
           </div>
