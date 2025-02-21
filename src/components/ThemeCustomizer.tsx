@@ -1,11 +1,5 @@
 
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { useState } from "react";
 
 export function ThemeCustomizer() {
@@ -62,26 +56,19 @@ export function ThemeCustomizer() {
   return (
     <div className="fixed top-16 right-4 flex flex-col gap-2">
       {(Object.entries(colors) as [keyof typeof colors, string][]).map(([key, color]) => (
-        <Popover key={key}>
-          <PopoverTrigger asChild>
-            <Button
-              variant="outline"
-              size="icon"
-              style={{ backgroundColor: color }}
-              className="border-2 hover:opacity-80"
-            >
-              <span className="sr-only">Pick {key} color</span>
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-16 p-2" align="end">
-            <input
-              type="color"
-              value={color}
-              onChange={(e) => updateColor(key)(e.target.value)}
-              className="w-full h-8"
-            />
-          </PopoverContent>
-        </Popover>
+        <div
+          key={key}
+          className="h-10 w-10 rounded-md border-2 border-input relative overflow-hidden hover:opacity-80 transition-opacity"
+          style={{ backgroundColor: color }}
+        >
+          <input
+            type="color"
+            value={color}
+            onChange={(e) => updateColor(key)(e.target.value)}
+            className="absolute inset-0 cursor-pointer opacity-0 w-full h-full"
+            aria-label={`Pick ${key} color`}
+          />
+        </div>
       ))}
     </div>
   );
