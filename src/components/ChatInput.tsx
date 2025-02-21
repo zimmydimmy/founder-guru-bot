@@ -27,13 +27,13 @@ export const ChatInput = ({ onSendMessage, disabled }: ChatInputProps) => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Ask your startup question..."
-            className="flex-1 px-4 py-3 rounded-xl bg-white border focus:outline-none focus:ring-2 focus:ring-primary/10 transition-all"
+            className="flex-1 px-4 py-3 rounded-xl bg-secondary text-secondary-foreground border border-tertiary focus:outline-none focus:ring-2 focus:ring-tertiary/10 transition-all"
             disabled={disabled}
           />
           <button
             type="submit"
             disabled={!message.trim() || disabled}
-            className="px-4 py-3 rounded-xl bg-primary text-primary-foreground hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-4 py-3 rounded-xl bg-secondary text-secondary-foreground hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed border border-tertiary"
           >
             <SendHorizontal className="w-5 h-5" />
           </button>
@@ -41,4 +41,4 @@ export const ChatInput = ({ onSendMessage, disabled }: ChatInputProps) => {
       </div>
     </div>
   );
-};
+}

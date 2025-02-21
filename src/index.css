@@ -10,13 +10,14 @@
     --primary-custom: 251 55% 71%;
     --secondary-custom: 231 35% 54%;
     --tertiary-custom: 222 30% 50%;
+    --quaternary-custom: 255 35% 60%;
     --text-custom: 210 40% 98%;
 
     --background: var(--primary-custom);
     --foreground: var(--text-custom);
     --card: var(--secondary-custom);
     --card-foreground: var(--text-custom);
-    --popover: var(--tertiary-custom);
+    --popover: var(--secondary-custom);
     --popover-foreground: var(--text-custom);
     --primary: var(--primary-custom);
     --primary-foreground: var(--text-custom);
@@ -32,7 +33,7 @@
     --destructive-foreground: 210 40% 98%;
     --border: var(--tertiary-custom);
     --input: var(--secondary-custom);
-    --ring: var(--primary-custom);
+    --ring: var(--tertiary-custom);
     --radius: 0.75rem;
     --chat-user: var(--text-custom);
     --chat-assistant: var(--secondary-custom);
@@ -70,7 +71,9 @@
   }
 
   .input-container {
-    @apply fixed bottom-0 left-0 right-0 p-4 bg-background/80 backdrop-blur-lg border-t;
+    @apply fixed bottom-0 left-0 right-0 p-4 border-t;
+    background-color: hsl(var(--quaternary-custom));
+    border-color: hsl(var(--tertiary-custom));
   }
 
   .input-wrapper {

@@ -8,6 +8,7 @@ export function ThemeCustomizer() {
     primary: '#9b87f5',
     secondary: '#7E69AB',
     tertiary: '#6E59A5',
+    quaternary: '#8E79BB',
     text: '#f8fafc',
   });
 
